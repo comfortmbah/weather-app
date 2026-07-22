@@ -1,8 +1,16 @@
-
+import SearchForm from "../components/SearchForm"
+import PageTitle from "../components/PageTitle"
 
 const Home = () => {
   return (
-    <div>Home</div>
+    <>
+      <PageTitle
+        title={"Weather Forecast"}
+        subtitle={"Search for any city around the world and view its current weather conditions."}
+      />
+
+      <SearchForm />
+    </>
   )
 }
 
