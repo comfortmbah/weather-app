@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { fetchWeatherData } from "../services/weatherApi";
 
 const useWeather = (city) => {
-  const [weatherData, setWeatherData] = useState(null);
+  const [weather, setWeather] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -13,7 +13,7 @@ const useWeather = (city) => {
 
       try {
         const data = await fetchWeatherData(city);
-        setWeatherData(data);
+        setWeather(data);
       } catch (err) {
         setError(err.message);
       } finally {
@@ -26,7 +26,7 @@ const useWeather = (city) => {
     }
   }, [city]);
 
-  return { weatherData, loading, error };
+  return { weather, loading, error };
 };
 
 export default useWeather;

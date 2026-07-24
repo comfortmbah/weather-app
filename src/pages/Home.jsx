@@ -10,7 +10,7 @@ import { useState } from "react"
 const Home = () => {
   const [city, setCity] = useState("");
   const [searchCity, setSearchCity] = useState("");
-  const { weatherData, loading, error } = useWeather(searchCity);
+  const { weather, loading, error } = useWeather(searchCity);
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -41,12 +41,12 @@ const Home = () => {
 
       {weatherData && (
         <WeatherCard 
-          city={weatherData.name}
-          country={weatherData.sys.country}
-          temperature={weatherData.main.temp}
-          description={weatherData.weatherData[0].description}
-          humidity={weatherData.main.humidity}
-          windSpeed={weatherData.wind.speed}
+          city={weather.name}
+          country={weather.sys.country}
+          temperature={weather.main.temp}
+          description={weather.weatherData[0].description}
+          humidity={weather.main.humidity}
+          windSpeed={weather.wind.speed}
         />
       )}
     </>
