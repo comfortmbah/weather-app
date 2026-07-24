@@ -37,14 +37,14 @@ const Home = () => {
 
       {error && <Error message={error} />}
 
-      {!loading && !error && !weatherData && <EmptyState />}
+      {!loading && !error && !weather && <EmptyState />}
 
-      {weatherData && (
+      {weather && (
         <WeatherCard 
           city={weather.name}
           country={weather.sys.country}
           temperature={weather.main.temp}
-          description={weather.weatherData[0].description}
+          description={weather?.[0]?.description}
           humidity={weather.main.humidity}
           windSpeed={weather.wind.speed}
         />
