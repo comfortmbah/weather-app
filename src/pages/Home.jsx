@@ -1,5 +1,6 @@
 import SearchForm from "../components/SearchForm"
 import PageTitle from "../components/PageTitle"
+import WeatherCard from "../components/WeatherCard"
 
 const Home = () => {
   return (
@@ -10,6 +11,15 @@ const Home = () => {
       />
 
       <SearchForm />
+
+      <WeatherCard 
+        city={'Lagos'}
+        country={'Nigeia'}
+        temperature={29}
+        description={'Clear Sky'}
+        humidity={82}
+        windSpeed={15}
+      />
     </>
   )
 }
